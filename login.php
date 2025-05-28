@@ -1,6 +1,7 @@
 <?php
 require_once "config/db.php";
 
+
 session_start();
 $message = "";
 
@@ -30,14 +31,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="tr">
+<?php $pageTitle = "Giriş Sayfa"; include('include/head.php'); ?>
 <head>
-  <meta charset="UTF-8">
-  <title>Giriş Yap - EnglishDiary</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css"> <!-- Sticky footer için -->
 </head>
 <body>
+
 <?php include('include/navbar.php'); ?>
 
+<main>
 <div class="container mt-5">
   <h2 class="mb-4">Giriş Yap</h2>
   <?php if ($message): ?>
@@ -56,7 +58,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <p class="mt-3">Hesabınız yok mu? <a href="register.php">Kayıt Ol</a></p>
   </form>
 </div>
+</main>
 
 <?php include('include/footer.php'); ?>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
