@@ -14,7 +14,7 @@
       <ul class="navbar-nav ms-auto align-items-center">
         <?php if (isset($_SESSION['user_id'])): ?>
           <li class="nav-item">
-            <a class="nav-link text-white" href="/flashcards.php">Öğrendiğim Kelimeler</a>
+            <a class="nav-link text-white" href="/wordlist.php">Kelimelerim</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white" href="/quizs.php">Quizlerim</a>
@@ -41,3 +41,4 @@
     <?php endif; ?>
   </div>
 </nav>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -13,7 +13,7 @@
   <!-- Hero Alanı -->
   <section class="py-5 text-center custom-hero text-white">
     <div class="container">
-      <h1 class="display-5 fw-bold">Learn English the Smart Way!</h1>
+      <h1 class="display-5 fw-bold">Learn Englısh the Smart Way!</h1>
       <p class="lead">Kelime öğren, yazı yaz, test çöz. Hepsi EnglishDiary ile tek yerde.</p>
       <?php if (!isset($_SESSION['user_id'])): ?>
         <a href="login.php" class="btn btn-light btn-lg mt-3">Hemen Başla</a>
@@ -58,12 +58,33 @@
             <div class="card-body text-center">
               <h5 class="card-title">📘 Kelime Kartları</h5>
               <p class="card-text text-muted">Bu özelliği kullanmak için giriş yapmalısınız.</p>
-              <a href="/login.php" class="btn btn-warning btn-sm">Giriş Yap</a>
+              <a href="/login.php" class="btn btn-light btn-lg btn-sm">Giriş Yap</a>
             </div>
           </div>
         <?php endif; ?>
       </div>
-
+      
+      <div class="col-md-4">
+        <?php if (isset($_SESSION['user_id'])): ?>
+          <a href="quizs.php" class="text-decoration-none text-dark">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body text-center">
+                <h5 class="card-title">🧠 Mini Quizler</h5>
+                <p class="card-text">Seviye bazlı testlerle bilginizi ölçün ve gelişiminizi takip edin.</p>
+              </div>
+            </div>
+          </a>
+        <?php else: ?>
+          <div class="card h-100 shadow-sm border-warning">
+            <div class="card-body text-center">
+              <h5 class="card-title">🧠 Mini Quizler</h5>
+              <p class="card-text text-muted">Bu özelliği kullanmak için giriş yapmalısınız.</p>
+              <a href="login.php" class="btn btn-light btn-lg btn-sm">Giriş Yap</a>
+            </div>
+          </div>
+        <?php endif; ?>
+      </div>
+      
 
       <!-- Giriş gerekli kart -->
       <div class="col-md-4">
@@ -81,7 +102,7 @@
             <div class="card-body text-center">
               <h5 class="card-title">✍️ Günlük Yazılar</h5>
               <p class="card-text text-muted">Bu özelliği kullanmak için giriş yapmalısınız.</p>
-              <a href="login.php" class="btn btn-warning btn-sm">Giriş Yap</a>
+              <a href="login.php" class="btn btn-light btn-lg btn-sm">Giriş Yap</a>
             </div>
           </div>
         <?php endif; ?>
@@ -103,7 +124,7 @@
             <div class="card-body text-center">
               <h5 class="card-title">🧠 Mini Quizler</h5>
               <p class="card-text text-muted">Bu özelliği kullanmak için giriş yapmalısınız.</p>
-              <a href="login.php" class="btn btn-warning btn-sm">Giriş Yap</a>
+              <a href="login.php" class="btn btn-light btn-lg btn-sm">Giriş Yap</a>
             </div>
           </div>
         <?php endif; ?>
