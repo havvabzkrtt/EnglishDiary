@@ -133,4 +133,68 @@ CREATE TABLE user_wrong_grammar_topics (
     FOREIGN KEY (question_id) REFERENCES grammar_quiz_questions(id)
 );
 
+----------------------------------------------
 
+-- 3. Reading Texts 
+CREATE TABLE reading_texts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    level ENUM('A1', 'A2', 'B1', 'B2', 'C1', 'C2') NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- title: Parçanın başlığı.
+-- content: Asıl metin içeriği.
+-- level: Dil seviyesi (CEFR seviyeleri).
+-- created_at: Oluşturulma tarihi.
+
+
+INSERT INTO reading_texts (title, content, level) VALUES
+-- A1 SEVİYE
+('My Daily Routine', 
+'I wake up at 7 a.m. every day. I brush my teeth and wash my face. Then I eat breakfast with my family. After that, I go to school by bus. In the evening, I do my homework and go to bed at 9 p.m.', 
+'A1'),
+('My Family', 
+'I live with my parents and my brother. My mother is a teacher and my father is a doctor. We have a small house near the park. On Sundays, we go to the zoo or play games together. I love my family very much.', 
+'A1'),
+
+-- A2 SEVİYE
+('Going to the Market', 
+'Every Saturday, I go to the market with my mother. We buy fresh vegetables, fruits, and eggs. The market is always crowded and colorful. I help my mother carry the bags. Sometimes she buys me ice cream too.', 
+'A2'),
+('My Favorite Hobby', 
+'I like painting in my free time. I have many brushes and colors at home. I paint pictures of animals and nature. Sometimes I give my paintings to my friends. Painting makes me happy and relaxed.', 
+'A2'),
+
+-- B1 SEVİYE
+('My First Day at Work', 
+'I remember my first day at work clearly. I was nervous but also very excited. My coworkers were friendly and helped me understand everything. I learned how to use the computer system and answer customer questions. At the end of the day, I felt proud of myself.', 
+'B1'),
+('A Rainy Day', 
+'Yesterday, it rained all day long. I stayed at home and read a good book. The sound of the rain was calming. I also made some hot chocolate and called my friend. Even though I didn’t go outside, it was a nice day.', 
+'B1'),
+
+-- B2 SEVİYE
+('City Life vs Country Life', 
+'Living in the city can be exciting and full of opportunities. There are many shops, restaurants, and things to do. However, it can also be noisy and stressful. Country life is more peaceful and quiet, but sometimes boring. People must choose what suits them best.', 
+'B2'),
+('Learning a New Language', 
+'Learning a new language is both challenging and rewarding. It helps you communicate with more people and understand different cultures. You need to practice every day and not be afraid to make mistakes. Watching movies or reading books in that language helps a lot. It takes time, but it’s worth it.', 
+'B2'),
+
+-- C1 SEVİYE
+('The Impact of Technology', 
+'Technology has changed the way we live and work. We can now connect with people around the world instantly. While it offers many advantages, it also brings challenges like reduced privacy. The key is to use technology responsibly. Understanding its effects is important for our future.', 
+'C1'),
+('Traveling Abroad', 
+'Traveling to other countries gives you a new perspective on life. You learn about different cultures, languages, and traditions. It can sometimes be uncomfortable, but also very exciting. You grow as a person and become more open-minded. Every trip teaches you something new.', 
+'C1'),
+
+-- C2 SEVİYE
+('The Philosophy of Happiness', 
+'Happiness is a complex concept that has been discussed for centuries. Some believe it comes from personal achievements, while others see it as a state of mind. Philosophers like Aristotle argued that true happiness comes from living a virtuous life. In modern times, people link happiness with well-being and balance. It remains one of the most profound questions in human life.', 
+'C2'),
+('Economic Globalization', 
+'Economic globalization refers to the increasing integration of economies worldwide. It allows goods, services, and capital to flow more freely across borders. While it boosts economic growth, it also creates inequality and job displacement in some regions. Policymakers must balance the benefits and drawbacks. The debate around globalization is likely to continue for decades.', 
+'C2');

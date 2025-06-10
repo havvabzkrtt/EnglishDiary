@@ -63,6 +63,28 @@
           </div>
         <?php endif; ?>
       </div>
+
+      <!-- Giriş gerekli kart -->
+      <div class="col-md-4">
+        <?php if (isset($_SESSION['user_id'])): ?>
+          <a href="reading/reading.php" class="text-decoration-none text-dark">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body text-center">
+                <h5 class="card-title">📘 Okuma Parçaları </h5>
+                <p class="card-text">Farklı parçalarla okumanı geliştir.</p>
+              </div>
+            </div>
+          </a>
+        <?php else: ?>
+          <div class="card h-100 shadow-sm border-warning">
+            <div class="card-body text-center">
+              <h5 class="card-title">📘 Okuma Parçaları</h5>
+              <p class="card-text text-muted">Bu özelliği kullanmak için giriş yapmalısınız.</p>
+              <a href="/login.php" class="btn btn-light btn-lg btn-sm">Giriş Yap</a>
+            </div>
+          </div>
+        <?php endif; ?>
+      </div>
       
       <div class="col-md-4">
         <?php if (isset($_SESSION['user_id'])): ?>
@@ -111,18 +133,18 @@
       <!-- Giriş gerekli kart -->
       <div class="col-md-4">
         <?php if (isset($_SESSION['user_id'])): ?>
-          <a href="quizs.php" class="text-decoration-none text-dark">
+          <a href="translation.php" class="text-decoration-none text-dark">
             <div class="card h-100 shadow-sm">
               <div class="card-body text-center">
-                <h5 class="card-title">🧠 Mini Quizler</h5>
-                <p class="card-text">Seviye bazlı testlerle bilginizi ölçün ve gelişiminizi takip edin.</p>
+                <h5 class="card-title">🧠 Kelime Çevirisi</h5>
+                <p class="card-text">Kelimeleri çevir</p>
               </div>
             </div>
           </a>
         <?php else: ?>
           <div class="card h-100 shadow-sm border-warning">
             <div class="card-body text-center">
-              <h5 class="card-title">🧠 Mini Quizler</h5>
+              <h5 class="card-title">🧠 Kelime Çevirisi</h5>
               <p class="card-text text-muted">Bu özelliği kullanmak için giriş yapmalısınız.</p>
               <a href="login.php" class="btn btn-light btn-lg btn-sm">Giriş Yap</a>
             </div>
@@ -138,6 +160,6 @@
 
 <?php include('include/footer.php'); ?>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

@@ -57,5 +57,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </main>
   
 <?php include('include/footer.php'); ?>
-</body>
-</html>
+

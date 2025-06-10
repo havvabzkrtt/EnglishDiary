@@ -19,6 +19,9 @@
           <li class="nav-item">
             <a class="nav-link text-white" href="/quizs.php">Quizlerim</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Eksik Grammerlerim</a>
+          </li>
         <?php endif; ?>
       </ul>
     </div>
