@@ -1,6 +1,6 @@
 
 
-# 🧠 Çeviri Uygulaması (TR ⇄ EN)
+# 🧠 Translation Modülü Hakkında - Çeviri Uygulaması (TR ⇄ EN)
 
 Bu proje, PHP arayüzü üzerinden Flask API ile İngilizce ⇄ Türkçe kelime çevirisi yapar.
 
@@ -19,59 +19,31 @@ EnglishDiary/
 
 ```
 
-## ⚙️ Gereksinimler
+Bu klasörde iki ana dosya bulunmaktadır:
 
-### Python
-```bash
-pip install flask transformers torch
-````
+- `translate_api.py`: Python tabanlı çeviri API servisidir.
+- `translate.php`: PHP tarafında, Python API'ye istek gönderip çeviri sonucunu alan dosyadır.
 
-### PHP
+## Çalışma Prensibi
 
-* PHP 8+
-* `allow_url_fopen` açık
+1. **translate_api.py**
+   - Flask ile çalışan bir web API servisidir.
+   - Argos Translate kütüphanesini kullanır.
+   - HTTP POST ile gelen metni, belirtilen diller arasında çevirir ve sonucu JSON olarak döner.
 
-## 🚀 Kullanım
+2. **translate.php**
+   - PHP ile yazılmıştır.
+   - Kullanıcıdan alınan metni ve dil parametrelerini, `translate_api.py`'nin çalıştığı sunucuya HTTP isteğiyle gönderir.
+   - Dönen çeviri sonucunu kullanıcıya gösterir.
 
-1. Modelleri HuggingFace’den indir:
+## Model Dosyaları
 
-   * `Helsinki-NLP/opus-mt-en-tr` → `model_en_tr/`
-   * `Helsinki-NLP/opus-mt-tr-en` → `model_tr_en/`
+Çeviri işleminin çalışabilmesi için Argos Translate model dosyalarını indirmeniz gerekmektedir. Model dosyalarını aşağıdaki adresten indirip, Argos Translate'in kullandığı dizine ekleyiniz:
 
-2. Flask API’yi çalıştır:
+[https://www.argosopentech.com/argospm/index/](https://www.argosopentech.com/argospm/index/)
 
-```bash
-cd translation
-python app.py
-```
+## Notlar
 
-3. Tarayıcıda aç:
-
-```
-http://localhost/EnglishDiary/translation/translation.php
-```
-
-## 📡 API
-
-* **URL:** `POST /translate`
-* **İstek:**
-
-```json
-{ "text": "Merhaba", "from": "tr", "to": "en" }
-```
-
-* **Yanıt:**
-
-```json
-{ "translated_text": "Hello" }
-```
-
-## 🎨 Arayüz
-
-* Ana renk: `#2C3E50`
-* Responsive ve kutu içinde basit bir tasarım
-
----
-
-Geliştirme ve kullanım için uygundur.
+- Python API servisini başlatmadan önce gerekli kütüphaneleri yükleyin (`pip install flask, argostranslate`).
+- PHP dosyasının çalışabilmesi için Python API'nın arka planda çalışıyor olması
 
