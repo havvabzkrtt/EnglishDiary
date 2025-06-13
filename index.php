@@ -133,7 +133,7 @@
       <!-- Giriş gerekli kart -->
       <div class="col-md-4">
         <?php if (isset($_SESSION['user_id'])): ?>
-          <a href="translation.php" class="text-decoration-none text-dark">
+          <a href="translation/translate.php" class="text-decoration-none text-dark">
             <div class="card h-100 shadow-sm">
               <div class="card-body text-center">
                 <h5 class="card-title">🧠 Kelime Çevirisi</h5>

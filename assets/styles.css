@@ -370,10 +370,4 @@ footer {
 }
 
 
-.word {
-    cursor: pointer;
-    color: blue;
-}
-.word.clicked {
-    color: red;
-}
+
