@@ -71,7 +71,7 @@ http://EnglishDiary.local
 ```
 If index.php loads, the setup is successful ✅
 
-📁 Project Structure
+### 📁 Project Structure
 ```java
 
 EnglishDiary/
@@ -87,7 +87,7 @@ EnglishDiary/
 └── ...              → Other pages (login, register, settings)
 ```
 
-🤝 Contributing
+### 🤝 Contributing
 To contribute:
 
 1) Fork the repo
