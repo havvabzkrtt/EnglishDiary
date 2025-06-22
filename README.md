@@ -25,13 +25,13 @@
 git clone https://github.com/username/englishdiary.git
 ```
 
-2. Import the Database
+### 2. Import the Database
 Use the SQL commands in *db_sql_codes.sql* to create the required MySQL database.
 
-3. Configure Database Connection
+### 3. Configure Database Connection
 Edit *config/db.php* to set your DB username, password, and database name.
 
-💻 Running from a Custom Folder (Virtual Host)
+### 💻 Running from a Custom Folder (Virtual Host)
 1. Apache Virtual Host Setup
 Edit httpd-vhosts.conf and add at the end:
 
